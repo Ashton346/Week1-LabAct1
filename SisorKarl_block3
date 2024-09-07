@@ -1,0 +1,50 @@
+<?php
+class Person{
+    public $firstname;
+    public $lastname;
+    private $age;
+    
+    public function __construct($firstname, $lastname, $age){
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->age = $age;
+        
+    }
+    
+    public function getFullName(){
+        return $this->firstname.''.$this->lastname;
+    }
+    
+    public function setAge($age){
+        $this->age = $age;
+    }
+    
+    public function getAge(){
+        return $this->age;
+    }
+}
+
+$Person = new Person('Karl Alwyn ', 'Sisor', 20);
+echo "Full Name: " . $Person->getFullName() . "\n";
+echo "Age: " . $Person->getAge(). "\n";
+
+class Car{
+    public $make;
+    public $model;
+    protected $year;
+    
+    public function __construct($make, $model, $year){
+        $this->make = $make;
+        $this->model =  $model;
+        $this->year = $year;
+    }
+    
+    public function getCarInfo(){
+        return $this->make . ' ' . $this->model . ' ' . $this->year . '';
+    }
+}
+
+$Car =  new Car("POURCHE", "911 Turbo S Cabriolet", 2024);
+echo "Car Info: " . $Car->getCarInfo();
+
+?>
